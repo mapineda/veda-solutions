@@ -7,15 +7,31 @@ The data in the .json file is then wrapped in an object-array and then served
 locally on port: 5000 
 
 ## Pre-requisites:
-- virtualenv
+- Docker
 
 ## How to:
 
 ### Set up:
-1. create virtual env
-2. install requirements by running `pip install -r requirements.txt`
+1. in root `mlb-app` build docker container
+`docker-compose -f local.yml build`
 
 ### Run:
-1. To get flask api running 
-`export FLASK_APP=app.py`
-`python -m flask run`
+
+2. run the stack `docker-compose -f local.yml up`
+
+
+### Create a User
+
+1. Sign-up 
+2. navigate to `http://0.0.0.0:8025/` to confirm email
+
+
+## Methodology:
+
+This application was created using cookie-cutter django for quick setup of a 
+production-ready django project.
+
+## Structure:
+mlb-app uses a task management system (celery) to scrape data that will be
+saved in our database (postgres). This data is then serialized and served over api
+endpoints.
