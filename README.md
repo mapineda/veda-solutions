@@ -12,18 +12,21 @@ locally on port: 5000
 ## How to:
 
 ### Set up:
-1. in root `mlb-app` build docker container
+- in root `mlb-app` build docker container
 `docker-compose -f local.yml build`
 
 ### Run:
 
-2. run the stack `docker-compose -f local.yml up`
+- run the stack `docker-compose -f local.yml up`
 
 
 ### Create a User
 
-1. Sign-up 
-2. navigate to `http://0.0.0.0:8025/` to confirm email
+1. run migrations
+`docker-compose -f local.yml run --rm django python manage.py migrate`
+2. run create superuser command
+`docker-compose -f local.yml run --rm django python manage.py createsuperuser`
+3. navigate to `http://0.0.0.0:8025/` to confirm email
 
 
 ## Methodology:

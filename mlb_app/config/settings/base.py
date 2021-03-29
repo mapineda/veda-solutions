@@ -72,10 +72,12 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
+
 ]
 
 LOCAL_APPS = [
     "mlb_app.users.apps.UsersConfig",
+    "mlb_app.players.apps.PlayersConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
